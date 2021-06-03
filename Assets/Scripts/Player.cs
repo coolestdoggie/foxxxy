@@ -5,34 +5,36 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //configuration parametrs
-    [Header("Player")]
-    [SerializeField] float moveSpeed = 10f;
-    [SerializeField] float padding = 1f;
+    [Header("Stats")]
     [SerializeField] int health = 200;
     [SerializeField] int maxHealth = 200;
-    [SerializeField] AudioClip deathSound;
-    [SerializeField] [Range(0, 1)] float deathSoundVolume = 0.75f;
-    [SerializeField] AudioClip shootSound;
-    [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.75f;
-    [SerializeField] GameObject explosion;
-    [SerializeField] float durationOfExplosion = 1f;
-
-
-
-    [Header("Projectile")]
+    
+    [Header("Shooting")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.1f;
     [SerializeField] AudioClip hitSound;
     [SerializeField] [Range(0,1)] float hitSoundVolume = 0.75f;
-
+    [SerializeField] GameObject explosion;
+    [SerializeField] float durationOfExplosion = 1f;
     Coroutine firingCoroutine;
+
+    [Header("Moving")]
+    [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float padding = 1f;
+
+    [Header("SFX")]
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] [Range(0, 1)] float deathSoundVolume = 0.75f;
+    [SerializeField] AudioClip shootSound;
+    [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.75f;
 
     float xMin;
     float xMax;
     float yMin;
     float yMax;
+
+    
 
     void Start()
     {
